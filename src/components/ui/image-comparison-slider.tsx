@@ -51,11 +51,11 @@ export const ImageComparison: React.FC<ImageComparisonProps> = ({ beforeImage, a
             <img src={beforeImage} alt={altBefore} className="block h-full w-full object-contain bg-white" draggable="false" />
 
             {/* Labels */}
-            <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-sm border border-red-500/20 rounded-lg px-3 py-1.5">
-                <span className="text-red-400/90 text-[11px] font-bold tracking-[0.15em] uppercase">Antes</span>
-            </div>
-            <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-sm border border-amber-400/20 rounded-lg px-3 py-1.5">
+            <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-sm border border-amber-400/20 rounded-lg px-3 py-1.5">
                 <span className="text-amber-400 text-[11px] font-bold tracking-[0.15em] uppercase">Depois</span>
+            </div>
+            <div className="absolute top-4 right-4 z-10 bg-black/60 backdrop-blur-sm border border-red-500/20 rounded-lg px-3 py-1.5">
+                <span className="text-red-400/90 text-[11px] font-bold tracking-[0.15em] uppercase">Antes</span>
             </div>
 
             {/* Slider Handle */}
