@@ -54,12 +54,12 @@ export default function BeliefBreakSection() {
             A verdade que ninguém te conta
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-[2.8rem] font-bold text-m-cream leading-[1.15] text-balance max-w-3xl mx-auto">
-            A jornada do cliente que{" "}
-            <span className="text-m-cream/30">você está perdendo.</span>
+            Postar no Instagram{" "}
+            <span className="text-m-cream/30">não vai fazer</span> sua empresa crescer.
           </h2>
-          <p className="mt-6 text-base text-m-cream/35 max-w-xl mx-auto leading-relaxed text-pretty">
-            Enquanto você posta no Instagram, seu concorrente conquista seus
-            clientes. Veja como isso acontece — cena por cena.
+          <p className="mt-6 text-base text-m-cream/35 max-w-2xl mx-auto leading-relaxed text-pretty">
+            Empresa sem posicionamento não escala. Aparência fraca transmite preço baixo.
+            Enquanto isso, seu concorrente conquista seus clientes só porque parece mais profissional.
           </p>
         </div>
 
