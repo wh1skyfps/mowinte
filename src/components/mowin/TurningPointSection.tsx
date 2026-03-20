@@ -1,11 +1,10 @@
-import { useReveal, stagger } from "./useScrollReveal";
-import { Zap, Shield, BarChart3, Crown } from "lucide-react";
+import { useReveal } from "./useScrollReveal";
+import { Zap } from "lucide-react";
+import beforeImg from "@/assets/portfolio-before-1.png";
+import afterImg from "@/assets/portfolio-after-1.jpg";
 
-const items = [
-  { icon: Crown, title: "Presença digital forte", desc: "Sua marca transmite autoridade e confiança em cada ponto de contato." },
-  { icon: Shield, title: "Posicionamento premium", desc: "Você deixa de competir por preço e começa a competir por valor." },
-  { icon: BarChart3, title: "Estrutura de vendas", desc: "Funis, landing pages e campanhas que geram receita previsível." },
-  { icon: Zap, title: "Crescimento previsível", desc: "Dados, estratégia e otimização contínua para escalar com segurança." },
+const showcases = [
+  { before: beforeImg, after: afterImg, label: "Design para redes sociais" },
 ];
 
 export default function TurningPointSection() {
@@ -13,7 +12,6 @@ export default function TurningPointSection() {
 
   return (
     <section className="bg-m-black py-28 lg:py-36 relative overflow-hidden">
-      {/* Gold glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-m-gold/[0.02] rounded-full blur-[200px]" />
 
       <div ref={ref} className="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
@@ -27,15 +25,35 @@ export default function TurningPointSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-          {items.map((item, i) => (
-            <div key={i} {...stagger(visible, i, 150)}>
-              <div className="glass-card glass-card-hover rounded-2xl p-8 h-full transition-all duration-500 group">
-                <div className="w-14 h-14 rounded-2xl bg-m-gold/[0.06] border border-m-gold/10 flex items-center justify-center mb-6 group-hover:bg-m-gold/[0.12] group-hover:border-m-gold/20 transition-all duration-300">
-                  <item.icon className="w-6 h-6 text-m-gold" />
+        <div className="space-y-16">
+          {showcases.map((item, i) => (
+            <div
+              key={i}
+              className={`transition-all duration-700 delay-[200ms] ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            >
+              <p className="text-center text-[13px] font-semibold tracking-[0.2em] uppercase text-m-gold/50 mb-8">
+                {item.label}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+                {/* Before */}
+                <div className="relative group">
+                  <div className="absolute top-4 left-4 z-10 bg-m-black/70 backdrop-blur-sm border border-red-500/15 rounded-lg px-3 py-1.5">
+                    <span className="text-red-400/80 text-[11px] font-bold tracking-[0.15em] uppercase">Antes</span>
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-white/5 bg-white">
+                    <img src={item.before} alt="Antes" className="w-full aspect-[4/5] object-contain" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-m-cream mb-3">{item.title}</h3>
-                <p className="text-sm text-m-cream/35 leading-relaxed text-pretty">{item.desc}</p>
+
+                {/* After */}
+                <div className="relative group">
+                  <div className="absolute top-4 left-4 z-10 bg-m-black/70 backdrop-blur-sm border border-m-gold/20 rounded-lg px-3 py-1.5">
+                    <span className="text-m-gold text-[11px] font-bold tracking-[0.15em] uppercase">Depois</span>
+                  </div>
+                  <div className="rounded-2xl overflow-hidden border border-m-gold/10 group-hover:border-m-gold/25 transition-all duration-500">
+                    <img src={item.after} alt="Depois" className="w-full aspect-[4/5] object-cover" />
+                  </div>
+                </div>
               </div>
             </div>
           ))}
