@@ -36,10 +36,10 @@ export default function TurningPointSection() {
                 {item.label}
               </p>
               <ImageComparison
-                beforeImage={item.before}
-                afterImage={item.after}
-                altBefore="Design antes da Mowin"
-                altAfter="Design depois da Mowin"
+                beforeImage={item.after}
+                afterImage={item.before}
+                altBefore="Design depois da Mowin"
+                altAfter="Design antes da Mowin"
               />
             </div>
           ))}
