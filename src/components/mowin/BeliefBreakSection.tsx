@@ -1,5 +1,10 @@
 import { useReveal, stagger } from "./useScrollReveal";
 import { useRef } from "react";
+import storyboard01 from "@/assets/storyboard-01-google.jpg";
+import storyboard02 from "@/assets/storyboard-02-instagram.jpg";
+import storyboard03 from "@/assets/storyboard-03-site.jpg";
+import storyboard04 from "@/assets/storyboard-04-compare.jpg";
+import storyboard05 from "@/assets/storyboard-05-loss.jpg";
 
 const scenes = [
   {
@@ -7,30 +12,35 @@ const scenes = [
     title: "O cliente pesquisa no Google",
     desc: "Ele procura pelo serviço que você oferece. Mas quem aparece é o concorrente — com site profissional, avaliações e presença forte.",
     emotion: "Invisibilidade",
+    image: storyboard01,
   },
   {
     number: "02",
     title: "Ele encontra seu Instagram",
     desc: "Posts sem padrão, sem identidade visual, sem estratégia. Em 3 segundos, ele já decidiu que você não é a melhor opção.",
     emotion: "Desconfiança",
+    image: storyboard02,
   },
   {
     number: "03",
     title: "Tenta achar seu site",
     desc: "Não existe. Ou pior — existe, mas parece de 2012. Lento, desatualizado, sem credibilidade nenhuma.",
     emotion: "Amadorismo",
+    image: storyboard03,
   },
   {
     number: "04",
     title: "Ele compara você com o concorrente",
     desc: "Mesmo produto, mesmo preço. Mas o outro transmite profissionalismo, autoridade e confiança. A escolha é óbvia.",
     emotion: "Perda",
+    image: storyboard04,
   },
   {
     number: "05",
     title: "Você perde a venda sem saber",
     desc: "Sem funil, sem dados, sem rastreamento. Você nem sabe quantos clientes está perdendo por dia — e para quem.",
     emotion: "Cegueira",
+    image: storyboard05,
   },
 ];
 
@@ -63,79 +73,75 @@ export default function BeliefBreakSection() {
           </p>
         </div>
 
-        {/* Storyboard timeline */}
-        <div ref={containerRef} className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-red-500/15 to-transparent md:-translate-x-px" />
-
-          <div className="space-y-8 lg:space-y-12">
-            {scenes.map((scene, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div key={i} {...stagger(visible, i, 200)}>
-                  <div
-                    className={`relative flex flex-col md:flex-row items-start md:items-center gap-6 ${
-                      isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
-                  >
-                    {/* Scene card */}
-                    <div
-                      className={`w-full md:w-[calc(50%-2rem)] pl-16 md:pl-0 ${
-                        isLeft ? "md:text-right md:pr-12" : "md:text-left md:pl-12"
-                      }`}
-                    >
-                      <div className="group">
-                        <div
-                          className={`inline-flex items-center gap-2 mb-3 ${
-                            isLeft ? "md:flex-row-reverse" : ""
-                          }`}
-                        >
-                          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-red-400/40">
-                            Cena {scene.number}
-                          </span>
-                          <span className="w-6 h-px bg-red-500/20" />
-                          <span className="text-[10px] font-semibold tracking-widest uppercase text-m-cream/20">
-                            {scene.emotion}
-                          </span>
-                        </div>
-                        <h3 className="text-lg sm:text-xl font-bold text-m-cream mb-2 leading-tight">
-                          {scene.title}
-                        </h3>
-                        <p className="text-sm text-m-cream/35 leading-relaxed text-pretty max-w-md inline-block">
-                          {scene.desc}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Timeline node */}
-                    <div className="absolute left-6 md:left-1/2 md:-translate-x-1/2 top-0 md:top-1/2 md:-translate-y-1/2 z-10">
-                      <div className="w-12 h-12 rounded-2xl bg-m-black border border-red-500/15 flex items-center justify-center group-hover:border-red-500/30 transition-colors duration-300">
-                        <span className="text-red-400/60 text-sm font-bold tabular-nums">
+        {/* Storyboard */}
+        <div ref={containerRef} className="space-y-16 lg:space-y-24">
+          {scenes.map((scene, i) => {
+            const isLeft = i % 2 === 0;
+            return (
+              <div key={i} {...stagger(visible, i, 200)}>
+                <div
+                  className={`flex flex-col gap-8 ${
+                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                  } md:items-center`}
+                >
+                  {/* Image */}
+                  <div className="w-full md:w-1/2 relative group">
+                    <div className="relative overflow-hidden rounded-2xl">
+                      <img
+                        src={scene.image}
+                        alt={scene.title}
+                        className="w-full aspect-[5/4] object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      {/* Dark overlay for cinematic feel */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-m-black/60 via-transparent to-m-black/20 pointer-events-none" />
+                      {/* Scene number badge */}
+                      <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-m-black/70 backdrop-blur-sm border border-red-500/15 flex items-center justify-center">
+                        <span className="text-red-400/70 text-xs font-bold tabular-nums">
                           {scene.number}
                         </span>
                       </div>
+                      {/* Emotion tag */}
+                      <div className="absolute bottom-4 left-4">
+                        <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-m-cream/40 bg-m-black/50 backdrop-blur-sm px-3 py-1.5 rounded-full border border-m-cream/5">
+                          {scene.emotion}
+                        </span>
+                      </div>
                     </div>
+                  </div>
 
-                    {/* Spacer for the other side */}
-                    <div className="hidden md:block w-[calc(50%-2rem)]" />
+                  {/* Text */}
+                  <div className={`w-full md:w-1/2 ${isLeft ? "md:pl-10" : "md:pr-10"}`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-red-400/40">
+                        Cena {scene.number}
+                      </span>
+                      <span className="w-8 h-px bg-red-500/20" />
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-m-cream mb-3 leading-tight">
+                      {scene.title}
+                    </h3>
+                    <p className="text-[15px] text-m-cream/35 leading-relaxed text-pretty max-w-md">
+                      {scene.desc}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* End marker */}
-          <div
-            className={`mt-12 flex justify-center transition-all duration-700 delay-[1200ms] ${
-              visible ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <div className="flex flex-col items-center gap-3">
-              <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/10" />
-              <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-red-400/30">
-                Resultado: venda perdida
-              </p>
-            </div>
+        {/* End marker */}
+        <div
+          className={`mt-20 flex justify-center transition-all duration-700 delay-[1200ms] ${
+            visible ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/10" />
+            <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-red-400/30">
+              Resultado: venda perdida
+            </p>
           </div>
         </div>
       </div>
