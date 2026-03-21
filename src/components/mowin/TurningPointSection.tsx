@@ -9,6 +9,8 @@ import portfolio2 from "@/assets/portfolio-2.webp";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
+import portfolio6 from "@/assets/portfolio-6.jpg";
+import portfolio7 from "@/assets/portfolio-7.jpg";
 
 const showcases = [
   { before: beforeImg, after: afterImg, label: "Design para redes sociais" },
@@ -55,7 +57,7 @@ export default function TurningPointSection() {
           <p className="text-center text-[13px] font-semibold tracking-[0.2em] uppercase text-m-gold/50 mb-8">
             Nosso portfólio
           </p>
-          <ImageAutoSlider images={[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5]} speed={25} />
+          <ImageAutoSlider images={[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6, portfolio7]} speed={25} />
         </div>
       </div>
     </section>
