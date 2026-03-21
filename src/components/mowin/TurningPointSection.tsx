@@ -9,6 +9,8 @@ import portfolio2 from "@/assets/portfolio-2.webp";
 import portfolio3 from "@/assets/portfolio-3.jpg";
 import portfolio4 from "@/assets/portfolio-4.jpg";
 import portfolio5 from "@/assets/portfolio-5.jpg";
+import portfolio6 from "@/assets/portfolio-6.jpg";
+import portfolio7 from "@/assets/portfolio-7.jpg";
 
 const showcases = [
   { before: beforeImg, after: afterImg, label: "Design para redes sociais" },
