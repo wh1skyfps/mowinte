@@ -1,8 +1,14 @@
 import { useReveal } from "./useScrollReveal";
 import { Zap } from "lucide-react";
 import { ImageComparison } from "@/components/ui/image-comparison-slider";
+import { ImageAutoSlider } from "@/components/ui/image-auto-slider";
 import beforeImg from "@/assets/portfolio-before-1.png";
 import afterImg from "@/assets/portfolio-after-1.jpg";
+import portfolio1 from "@/assets/portfolio-1.png";
+import portfolio2 from "@/assets/portfolio-2.webp";
+import portfolio3 from "@/assets/portfolio-3.jpg";
+import portfolio4 from "@/assets/portfolio-4.jpg";
+import portfolio5 from "@/assets/portfolio-5.jpg";
 
 const showcases = [
   { before: beforeImg, after: afterImg, label: "Design para redes sociais" },
@@ -43,6 +49,13 @@ export default function TurningPointSection() {
               />
             </div>
           ))}
+        </div>
+
+        <div className={`mt-20 transition-all duration-700 delay-[400ms] ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p className="text-center text-[13px] font-semibold tracking-[0.2em] uppercase text-m-gold/50 mb-8">
+            Nosso portfólio
+          </p>
+          <ImageAutoSlider images={[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5]} speed={25} />
         </div>
       </div>
     </section>
