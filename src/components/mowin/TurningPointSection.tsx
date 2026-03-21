@@ -1,8 +1,14 @@
 import { useReveal } from "./useScrollReveal";
 import { Zap } from "lucide-react";
 import { ImageComparison } from "@/components/ui/image-comparison-slider";
+import { ImageAutoSlider } from "@/components/ui/image-auto-slider";
 import beforeImg from "@/assets/portfolio-before-1.png";
 import afterImg from "@/assets/portfolio-after-1.jpg";
+import portfolio1 from "@/assets/portfolio-1.png";
+import portfolio2 from "@/assets/portfolio-2.webp";
+import portfolio3 from "@/assets/portfolio-3.jpg";
+import portfolio4 from "@/assets/portfolio-4.jpg";
+import portfolio5 from "@/assets/portfolio-5.jpg";
 
 const showcases = [
   { before: beforeImg, after: afterImg, label: "Design para redes sociais" },
