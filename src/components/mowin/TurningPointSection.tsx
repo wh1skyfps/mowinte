@@ -57,7 +57,7 @@ export default function TurningPointSection() {
           <p className="text-center text-[13px] font-semibold tracking-[0.2em] uppercase text-m-gold/50 mb-8">
             Nosso portfólio
           </p>
-          <ImageAutoSlider images={[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5]} speed={25} />
+          <ImageAutoSlider images={[portfolio1, portfolio2, portfolio3, portfolio4, portfolio5, portfolio6, portfolio7]} speed={25} />
         </div>
       </div>
     </section>
