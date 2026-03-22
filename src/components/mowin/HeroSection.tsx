@@ -7,6 +7,7 @@ import logoClient3 from "@/assets/logo-client-3.png";
 import logoClient4 from "@/assets/logo-client-4.png";
 import { ArrowRight, Star } from "lucide-react";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import Globe from "@/components/ui/globe";
 
 export default function HeroSection() {
   const { ref, visible } = useReveal(0.05);
