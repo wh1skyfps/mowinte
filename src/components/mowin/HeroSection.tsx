@@ -76,10 +76,30 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right globe */}
+          {/* Right globe with floating cards */}
           <div className={`hidden lg:flex lg:col-span-5 xl:col-span-6 items-center justify-center relative transition-all duration-1000 delay-[500ms] ${visible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
-            <div className="animate-float-slow">
-              <Globe />
+            <div className="relative">
+              <div className="animate-float-slow">
+                <Globe />
+              </div>
+              {/* Floating small card */}
+              <div className="absolute -bottom-8 -left-8 animate-float" style={{ animationDelay: "1s" }}>
+                <div className="bg-m-card/90 backdrop-blur-xl rounded-xl p-4 border border-m-gold/10 shadow-xl shadow-black/40 w-48">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-green-400" />
+                    <span className="text-m-cream/60 text-[10px] font-medium">Conversões</span>
+                  </div>
+                  <div className="text-m-cream text-xl font-bold">+247%</div>
+                  <div className="text-m-gold text-[10px] font-medium mt-0.5">último trimestre</div>
+                </div>
+              </div>
+              {/* ROI card */}
+              <div className="absolute -top-4 -right-4 animate-float" style={{ animationDelay: "2s" }}>
+                <div className="bg-m-card/90 backdrop-blur-xl rounded-xl p-4 border border-m-gold/10 shadow-xl shadow-black/40 w-40">
+                  <div className="text-m-cream/40 text-[10px] font-medium mb-1">ROI Médio</div>
+                  <div className="text-m-gold text-lg font-bold">8.3x</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
