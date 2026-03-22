@@ -3,7 +3,7 @@ import logoImg from "@/assets/logo-mowin.jpg";
 
 export default function IntroSplash({ onComplete }: { onComplete: () => void }) {
   const [phase, setPhase] = useState(0); // 0=scanning, 1=text, 2=fade-out
-  const titleWords = ["Dominamos", "o", "Digital"];
+  const titleWords = ["Construa", "Seus", "Sonhos"];
   const subtitle = "Posicionamento premium para empresas ambiciosas.";
 
   useEffect(() => {
