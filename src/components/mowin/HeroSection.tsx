@@ -82,8 +82,8 @@ export default function HeroSection() {
               <Globe />
             </div>
           </div>
-          </div>
         </div>
+      </div>
       </div>
 
       {/* Bottom fade */}
