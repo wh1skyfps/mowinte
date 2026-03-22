@@ -76,34 +76,12 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right floating mockups */}
-          <div className={`hidden lg:block lg:col-span-5 xl:col-span-6 relative transition-all duration-1000 delay-[500ms] ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}>
-            <div className="relative">
-              {/* Main laptop mockup */}
-              <div className="animate-float-slow">
-                <div className="bg-m-card/80 rounded-2xl p-1 border border-white/5 shadow-2xl shadow-black/50 gold-glow">
-                  <img src={heroBg} alt="Dashboard" className="rounded-xl w-full aspect-[16/10] object-cover" />
-                </div>
-              </div>
-              {/* Floating small card */}
-              <div className="absolute -bottom-8 -left-8 animate-float" style={{ animationDelay: "1s" }}>
-                <div className="bg-m-card/90 backdrop-blur-xl rounded-xl p-4 border border-m-gold/10 shadow-xl shadow-black/40 w-48">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-2 h-2 rounded-full bg-green-400" />
-                    <span className="text-m-cream/60 text-[10px] font-medium">Conversões</span>
-                  </div>
-                  <div className="text-m-cream text-xl font-bold">+247%</div>
-                  <div className="text-m-gold text-[10px] font-medium mt-0.5">último trimestre</div>
-                </div>
-              </div>
-              {/* Another float card */}
-              <div className="absolute -top-4 -right-4 animate-float" style={{ animationDelay: "2s" }}>
-                <div className="bg-m-card/90 backdrop-blur-xl rounded-xl p-4 border border-m-gold/10 shadow-xl shadow-black/40 w-40">
-                  <div className="text-m-cream/40 text-[10px] font-medium mb-1">ROI Médio</div>
-                  <div className="text-m-gold text-lg font-bold">8.3x</div>
-                </div>
-              </div>
+          {/* Right globe */}
+          <div className={`hidden lg:flex lg:col-span-5 xl:col-span-6 items-center justify-center relative transition-all duration-1000 delay-[500ms] ${visible ? "opacity-100 scale-100" : "opacity-0 scale-90"}`}>
+            <div className="animate-float-slow">
+              <Globe />
             </div>
+          </div>
           </div>
         </div>
       </div>
